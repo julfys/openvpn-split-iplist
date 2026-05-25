@@ -41,7 +41,7 @@ require_root() {
 # На разных системах он может называться по-разному:
 # openvpn@server.service, openvpn-server@server.service и т.д.
 detect_openvpn_service() {
-  systemctl list-units --type=service --all 'openvpn*' --no-legend | awk '{print $1}' | head -n1
+  systemctl list-units --type=service --all 'openvpn-server@*' --no-legend | awk '{print $1}' | head -n1
 }
 
 # Пытаемся автоматически найти основной конфиг OpenVPN.
